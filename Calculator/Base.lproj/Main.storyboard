@@ -199,7 +199,7 @@
                                     <action selector="buttons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nEF-sN-kzJ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUh-Qi-M7A">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OUTPUT" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUh-Qi-M7A">
                                 <rect key="frame" x="20" y="212" width="374" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="110" id="04K-0K-80i"/>
@@ -301,7 +301,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="output" destination="uUh-Qi-M7A" id="Km3-1z-FfU"/>
+                        <outlet property="label" destination="uUh-Qi-M7A" id="OJs-rD-1TN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

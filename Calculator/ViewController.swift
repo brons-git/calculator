@@ -10,54 +10,66 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    // Used for calculations
-    var x_placeInFirst:Bool = true;
-    var x_first:Double = 0;
-    var x_second:Double = 0;
-    var calc_char:String = "";
+    var numberOnScreen:Double = 0;
+    var previousNumber:Double = 0;
+    var performingMath = false
+    var operation = 0;
     
     // Number displayed
-    @IBOutlet weak var stored_num: UILabel!
+    //@IBOutlet weak var prev_ans: UILabel!
+    @IBOutlet weak var label: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     
     @IBAction func numbers(_ sender: UIButton) {
-        stored_num.text = stored_num.text! + String(sender.tag-1)
-        if x_placeInFirst {
-            x_first = Double(stored_num.text!)!
+        if performingMath == true {
+            label.text = String(sender.tag-1)
+            numberOnScreen = Double(label.text!)!
+            performingMath = false
         } else {
-            x_second = Double(stored_num.text!)!
+            label.text = label.text! + String(sender.tag-1)
+            numberOnScreen = Double(label.text!)!
         }
-        x_placeInFirst = !x_placeInFirst
     }
     
     @IBAction func buttons(_ sender: UIButton) {
         // + - X /
-        if stored_num.text != "" && sender.tag != 11 && sender.tag != 16
+        if label.text != "" && sender.tag != 11 && sender.tag != 16
         {
+            previousNumber = Double(label.text!)!
+            
             if sender.tag == 12 { //Division
-                calc_char = "/"
                 
             } else if sender.tag == 13 { //Multiplication
-                calc_char = "X"
                 
             } else if sender.tag == 14 { //Subtraction
-                calc_char = "-"
                 
             } else if sender.tag == 15 { //Addition
-                calc_char = "+"
                 
             }
-        } else if sender.tag == 11 { //Clear
-            calc_char = "AC"
+            operation = sender.tag
+            performingMath = true
             
-        } else if sender.tag == 16 { //Equal
-            calc_char = "="
+        } else if sender.tag == 16 {
+            if operation == 12 {
+                label.text = String(previousNumber / numberOnScreen)
+            } else if operation == 13 {
+                label.text = String(previousNumber * numberOnScreen)
+            } else if operation == 14 {
+                label.text = String(previousNumber - numberOnScreen)
+            } else if operation == 15 {
+                label.text = String(previousNumber + numberOnScreen)
+            }
+        } else if sender.tag == 11 {
+            label.text = ""
+            previousNumber = 0;
+            numberOnScreen = 0;
+            operation = 0;
         }
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
+    
 
 
 }
