@@ -44,6 +44,7 @@ class ViewController: UIViewController {
     // View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
+        label.text = "0"
         btnDefaultStates()
     }
     
@@ -54,6 +55,10 @@ class ViewController: UIViewController {
             numberOnScreen = Double(label.text!)!
             performingMath = false
         } else {
+            label.text = ""
+            previousNumber = 0;
+            numberOnScreen = 0;
+            operation = 0;
             label.text = label.text! + String(sender.tag-1)
             numberOnScreen = Double(label.text!)!
         }
@@ -93,7 +98,7 @@ class ViewController: UIViewController {
             
         // All Clear
         } else if sender.tag == 11 {
-            label.text = ""
+            label.text = "0"
             previousNumber = 0;
             numberOnScreen = 0;
             operation = 0;
