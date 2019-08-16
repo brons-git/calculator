@@ -31,6 +31,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var nineBtn: UIButton!
     @IBOutlet weak var calculateBtn: UIButton!
     
+    // Labels
+    //@IBOutlet weak var prev_ans: UILabel!
+    @IBOutlet weak var label: UILabel!
+    
     // Variables
     var numberOnScreen:Double = 0;
     var previousNumber:Double = 0;
@@ -38,22 +42,17 @@ class ViewController: UIViewController {
     var operation = 0;
     var clear_prev_output = true
     
-    // Number displayed
-    //@IBOutlet weak var prev_ans: UILabel!
-    @IBOutlet weak var label: UILabel!
-    
     // View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Set Defaults
-        label.text = "0"
+        label.text = "0.0"
         btnDefaultStates()
     }
     
     // Number Pressed
     @IBAction func numbers(_ sender: UIButton) {
-        // Set Buttons To Default States
         btnDefaultStates()
         
         // Second Number for Calculation
@@ -103,12 +102,9 @@ class ViewController: UIViewController {
     // Operation Pressed
     @IBAction func buttons(_ sender: UIButton) {
         btnDefaultStates()
-        
-        // + - X /
         if label.text != "" && sender.tag != 11 && sender.tag != 16
         {
             previousNumber = Double(label.text!)!
-            
             if sender.tag == 12 { //Division
                 divisionBtn.backgroundColor = UIColor.green
             } else if sender.tag == 13 { //Multiplication
@@ -138,7 +134,7 @@ class ViewController: UIViewController {
         // All Clear
         } else if sender.tag == 11 {
             btnDefaultStates()
-            label.text = "0"
+            label.text = "0.0"
             previousNumber = 0;
             numberOnScreen = 0;
             operation = 0;
