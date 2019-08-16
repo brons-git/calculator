@@ -15,6 +15,7 @@
 		23ACC2EB22F4EF78002968A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23ACC2E922F4EF78002968A2 /* LaunchScreen.storyboard */; };
 		23ACC2F622F4EF78002968A2 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ACC2F522F4EF78002968A2 /* CalculatorTests.swift */; };
 		23ACC30122F4EF78002968A2 /* CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ACC30022F4EF78002968A2 /* CalculatorUITests.swift */; };
+		23FCCD0B23064FC8009A2F18 /* defaultState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FCCD0A23064FC8009A2F18 /* defaultState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		23ACC2FC22F4EF78002968A2 /* CalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		23ACC30022F4EF78002968A2 /* CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUITests.swift; sourceTree = "<group>"; };
 		23ACC30222F4EF78002968A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23FCCD0A23064FC8009A2F18 /* defaultState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = defaultState.swift; path = "../../../../../../../../../System/Volumes/Data/Users/bronsonberwald/Library/CloudStorage/iCloud Drive/Desktop/Xcode/Calculator/Calculator/defaultState.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				23ACC2DE22F4EF76002968A2 /* AppDelegate.swift */,
 				23ACC2E022F4EF76002968A2 /* SceneDelegate.swift */,
 				23ACC2E222F4EF76002968A2 /* ViewController.swift */,
+				23FCCD0A23064FC8009A2F18 /* defaultState.swift */,
 				23ACC2E422F4EF76002968A2 /* Main.storyboard */,
 				23ACC2E722F4EF78002968A2 /* Assets.xcassets */,
 				23ACC2E922F4EF78002968A2 /* LaunchScreen.storyboard */,
@@ -262,6 +265,7 @@
 				23ACC2E322F4EF76002968A2 /* ViewController.swift in Sources */,
 				23ACC2DF22F4EF76002968A2 /* AppDelegate.swift in Sources */,
 				23ACC2E122F4EF76002968A2 /* SceneDelegate.swift in Sources */,
+				23FCCD0B23064FC8009A2F18 /* defaultState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
