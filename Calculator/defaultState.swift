@@ -10,85 +10,83 @@ import Foundation
 import UIKit
 
 extension ViewController {
+    
     // Set buttons back to default state
     func btnDefaultStates() {
-        clearBtn.backgroundColor = UIColor.black
+        
+        clearBtn.backgroundColor = UIColor.systemBlue
         clearBtn.layer.cornerRadius = 35
         clearBtn.clipsToBounds = true
         
-        clearBtn.backgroundColor = UIColor.black
-        clearBtn.layer.cornerRadius = 35
-        clearBtn.clipsToBounds = true
-        
-        inverseBtn.backgroundColor = UIColor.black
+        inverseBtn.backgroundColor = UIColor.yellow
         inverseBtn.layer.cornerRadius = 35
         inverseBtn.clipsToBounds = true
         
-        percentBtn.backgroundColor = UIColor.black
+        percentBtn.backgroundColor = UIColor.yellow
         percentBtn.layer.cornerRadius = 35
         percentBtn.clipsToBounds = true
         
-        divisionBtn.backgroundColor = UIColor.black
+        divisionBtn.backgroundColor = UIColor.orange
         divisionBtn.layer.cornerRadius = 35
         divisionBtn.clipsToBounds = true
         
-        multiplicationBtn.backgroundColor = UIColor.black
+        multiplicationBtn.backgroundColor = UIColor.orange
         multiplicationBtn.layer.cornerRadius = 35
         multiplicationBtn.clipsToBounds = true
         
-        subtractionBtn.backgroundColor = UIColor.black
+        subtractionBtn.backgroundColor = UIColor.orange
         subtractionBtn.layer.cornerRadius = 35
         subtractionBtn.clipsToBounds = true
         
-        additionBtn.backgroundColor = UIColor.black
+        additionBtn.backgroundColor = UIColor.orange
         additionBtn.layer.cornerRadius = 35
         additionBtn.clipsToBounds = true
         
-        decimalBtn.backgroundColor = UIColor.black
+        decimalBtn.backgroundColor = UIColor.darkGray
         decimalBtn.layer.cornerRadius = 35
         decimalBtn.clipsToBounds = true
         
-        zeroBtn.backgroundColor = UIColor.black
+        zeroBtn.backgroundColor = UIColor.darkGray
         zeroBtn.layer.cornerRadius = 35
         zeroBtn.clipsToBounds = true
         
-        oneBtn.backgroundColor = UIColor.black
+        oneBtn.backgroundColor = UIColor.darkGray
         oneBtn.layer.cornerRadius = 35
         oneBtn.clipsToBounds = true
         
-        twoBtn.backgroundColor = UIColor.black
+        twoBtn.backgroundColor = UIColor.darkGray
         twoBtn.layer.cornerRadius = 35
         twoBtn.clipsToBounds = true
         
-        threeBtn.backgroundColor = UIColor.black
+        threeBtn.backgroundColor = UIColor.darkGray
         threeBtn.layer.cornerRadius = 35
         threeBtn.clipsToBounds = true
         
-        fourBtn.backgroundColor = UIColor.black
+        fourBtn.backgroundColor = UIColor.darkGray
         fourBtn.layer.cornerRadius = 35
         fourBtn.clipsToBounds = true
         
-        fiveBtn.backgroundColor = UIColor.black
+        fiveBtn.backgroundColor = UIColor.darkGray
         fiveBtn.layer.cornerRadius = 35
         fiveBtn.clipsToBounds = true
         
-        sixBtn.backgroundColor = UIColor.black
+        sixBtn.backgroundColor = UIColor.darkGray
         sixBtn.layer.cornerRadius = 35
         sixBtn.clipsToBounds = true
         
-        sevenBtn.backgroundColor = UIColor.black
+        sevenBtn.backgroundColor = UIColor.darkGray
         sevenBtn.layer.cornerRadius = 35
         sevenBtn.clipsToBounds = true
         
-        eightBtn.backgroundColor = UIColor.black
+        eightBtn.backgroundColor = UIColor.darkGray
         eightBtn.layer.cornerRadius = 35
         eightBtn.clipsToBounds = true
         
-        nineBtn.backgroundColor = UIColor.black
+        nineBtn.backgroundColor = UIColor.darkGray
         nineBtn.layer.cornerRadius = 35
         nineBtn.clipsToBounds = true
         
-        calculateBtn.backgroundColor = UIColor.black
+        calculateBtn.backgroundColor = UIColor.red
         calculateBtn.layer.cornerRadius = 35
         calculateBtn.clipsToBounds = true
     }

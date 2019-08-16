@@ -102,19 +102,21 @@ class ViewController: UIViewController {
     
     // Operation Pressed
     @IBAction func buttons(_ sender: UIButton) {
+        btnDefaultStates()
+        
         // + - X /
         if label.text != "" && sender.tag != 11 && sender.tag != 16
         {
             previousNumber = Double(label.text!)!
             
             if sender.tag == 12 { //Division
-                divisionBtn.backgroundColor = UIColor.blue
+                divisionBtn.backgroundColor = UIColor.green
             } else if sender.tag == 13 { //Multiplication
-                multiplicationBtn.backgroundColor = UIColor.blue
+                multiplicationBtn.backgroundColor = UIColor.green
             } else if sender.tag == 14 { //Subtraction
-                subtractionBtn.backgroundColor = UIColor.blue
+                subtractionBtn.backgroundColor = UIColor.green
             } else if sender.tag == 15 { //Addition
-                additionBtn.backgroundColor = UIColor.blue
+                additionBtn.backgroundColor = UIColor.green
             }
             operation = sender.tag
             performingMath = true
