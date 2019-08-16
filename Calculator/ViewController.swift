@@ -58,31 +58,44 @@ class ViewController: UIViewController {
         
         // Second Number for Calculation
         if performingMath == true {
-            label.text = String(sender.tag-1)
+            if sender.tag == 19 {
+                label.text = "0."
+            } else {
+                label.text = String(sender.tag-1)
+            }
             numberOnScreen = Double(label.text!)!
+            clear_prev_output = false
             performingMath = false
             
         // First Number for Calculation
         } else {
             // New number
             if clear_prev_output == true {
-                label.text = ""
-                // Add new data
-                operation = 0;
-                label.text = label.text! + String(sender.tag-1)
-                numberOnScreen = Double(label.text!)!
-                clear_prev_output = false
-            // Add decimal
-            } else if sender.tag == 19 {
-                label.text = label.text! + "."
-                numberOnScreen = Double(label.text!)!
-                
+                // Decimal
+                if sender.tag == 19 {
+                    label.text = label.text! + "."
+                    numberOnScreen = Double(label.text!)!
+                } else {
+                    label.text = ""
+                    // Add new data
+                    label.text = label.text! + String(sender.tag-1)
+                    numberOnScreen = Double(label.text!)!
+                    clear_prev_output = false
+                }
             // Existing Number
+            } else if clear_prev_output == false {
+                // Decimal
+                if sender.tag == 19 {
+                    label.text = label.text! + "."
+                    numberOnScreen = Double(label.text!)!
+                } else {
+                    // Add new data
+                    label.text = label.text! + String(sender.tag-1)
+                    numberOnScreen = Double(label.text!)!
+                }
             } else {
-                // Add new data
-                operation = 0;
-                label.text = label.text! + String(sender.tag-1)
-                numberOnScreen = Double(label.text!)!
+                print("ERROR; Number pressed")
+                
             }
         }
     }
@@ -131,6 +144,5 @@ class ViewController: UIViewController {
         }
     }
     
-    
-    
 }
+
