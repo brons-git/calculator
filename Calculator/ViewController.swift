@@ -72,21 +72,26 @@ class ViewController: UIViewController {
             if clear_prev_output == true {
                 // Decimal
                 if sender.tag == 19 {
-                    label.text = label.text! + "."
-                    numberOnScreen = Double(label.text!)!
+                    label.text = "0."
+                    //numberOnScreen = Double(label.text!)!
                 } else {
                     label.text = ""
                     // Add new data
                     label.text = label.text! + String(sender.tag-1)
-                    numberOnScreen = Double(label.text!)!
-                    clear_prev_output = false
                 }
+                numberOnScreen = Double(label.text!)!
+                clear_prev_output = false
+                
             // Existing Number
             } else if clear_prev_output == false {
                 // Decimal
                 if sender.tag == 19 {
-                    label.text = label.text! + "."
-                    numberOnScreen = Double(label.text!)!
+                    if label.text! == "0." {
+                        print("can't use decimal twice")
+                    } else {
+                        label.text = label.text! + "."
+                        numberOnScreen = Double(label.text!)!
+                    }
                 } else {
                     // Add new data
                     label.text = label.text! + String(sender.tag-1)
