@@ -135,6 +135,7 @@ class ViewController: UIViewController {
                 label.text = String(previousNumber + numberOnScreen)
             }
             btnDefaultStates()
+            clear_prev_output = true
             
         // All Clear
         } else if sender.tag == 11 {
