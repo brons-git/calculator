@@ -56,55 +56,48 @@ class ViewController: UIViewController {
     @IBAction func numbers(_ sender: UIButton) {
         btnDefaultStates()
         
-        // 2nd Number for Calculation
+        // Second Number for Calculation
         if performingMath == true {
-            print("FLAG !!! 3")
             if sender.tag == 19 {
-                print("FLAG !!! 4")
-                check_decimal_restriction()
+                label.text = "0."
+                decimal_restricted = true
             } else {
-                print("FLAG !!! 5")
                 label.text = String(sender.tag-1)
             }
-            print("FLAG !!! 6")
             numberOnScreen = Double(label.text!)!
             clear_prev_output = false
             performingMath = false
             
-        // 1st Number for Calculation
+        // First Number for Calculation
         } else {
             // New number
-            print("FLAG !!! 7")
             if clear_prev_output == true {
                 // Decimal
                 if sender.tag == 19 {
-                    print("FLAG !!! 8")
-                    check_decimal_restriction()
+                    label.text = "0."
+                    decimal_restricted = true
+                    //numberOnScreen = Int(label.text!)!
                 } else {
                     label.text = ""
-                    print("FLAG !!! 9")
                     // Add new data
                     label.text = label.text! + String(sender.tag-1)
                 }
-                print("FLAG !!! 10")
                 numberOnScreen = Double(label.text!)!
                 clear_prev_output = false
                 
             // Existing Number
             } else if clear_prev_output == false {
-                // Decimal
-                print("FLAG !!! 11")
-                if sender.tag == 19 {
-                    print("FLAG !!! 12")
-                    check_decimal_restriction()
+                // Decimal Exists
+                if decimal_restricted == false {
+                    label.text = label.text! + "0."
+                    //numberOnScreen = Double(label.text!)!
+                    
                 } else {
                     // Add new data
-                    print("FLAG !!! 13")
                     label.text = label.text! + String(sender.tag-1)
                     numberOnScreen = Double(label.text!)!
                 }
             } else {
-                print("FLAG !!! 14")
                 print("ERROR; Number pressed")
                 
         }
@@ -114,7 +107,7 @@ class ViewController: UIViewController {
 // Operation Pressed
 @IBAction func buttons(_ sender: UIButton) {
     btnDefaultStates()
-    if label.text != "" && sender.tag != 11 && sender.tag != 16 && sender.tag != 17 && sender.tag != 18
+    if label.text != "" && sender.tag != 11 && sender.tag != 16
     {
         previousNumber = Double(label.text!)!
         if sender.tag == 12 { //Division
@@ -129,9 +122,8 @@ class ViewController: UIViewController {
         operation = sender.tag
         performingMath = true
         clear_prev_output = true
-        decimal_restricted = false
         
-    // Calculate
+        // Calculate
     } else if sender.tag == 16 {
         if operation == 12 {
             label.text = String(previousNumber / numberOnScreen)
@@ -146,7 +138,7 @@ class ViewController: UIViewController {
         clear_prev_output = true
         decimal_restricted = false
         
-    // All Clear
+        // All Clear
     } else if sender.tag == 11 {
         btnDefaultStates()
         label.text = "0"
@@ -156,32 +148,19 @@ class ViewController: UIViewController {
         clear_prev_output = true
         decimal_restricted = false
         
-    // Inverse
+        // Inverse
     } else if sender.tag == 17 {
         print("Inverse")
         label.text = "-" + label.text!
         numberOnScreen = Double(label.text!)!
         
-    // Convert to Percentage
+        // Convert to Percentage
     } else if sender.tag == 18 {
         print("Convert to Percentage")
         decimal_restricted = true
         
     }
     
-}
-    
-func check_decimal_restriction() {
-    if decimal_restricted == false {
-        print("FLAG !!! 1")
-        print("decial is not restricted")
-        label.text = label.text! + "."
-        numberOnScreen = Double(label.text!)!
-        decimal_restricted = true
-    } else {
-        print("FLAG !!! 2")
-        print("can't use decimal place twice")
-    }
 }
 
 }
