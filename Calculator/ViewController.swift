@@ -63,7 +63,6 @@ class ViewController: UIViewController {
             } else {
                 label.text = String(sender.tag-1)
             }
-            numberOnScreen = Double(label.text!)!
             clear_prev_output = false
             performingMath = false
             
@@ -79,7 +78,6 @@ class ViewController: UIViewController {
                     // Add new data
                     label.text = label.text! + String(sender.tag-1)
                 }
-                numberOnScreen = Double(label.text!)!
                 clear_prev_output = false
                 
             // Existing Number
@@ -90,7 +88,6 @@ class ViewController: UIViewController {
                 } else {
                     // Add new data
                     label.text = label.text! + String(sender.tag-1)
-                    numberOnScreen = Double(label.text!)!
                 }
             } else {
                 print("ERROR; Number pressed")
@@ -121,6 +118,7 @@ class ViewController: UIViewController {
             
         // Calculate
         } else if sender.tag == 16 {
+            numberOnScreen = Double(label.text!)!
             if operation == 12 {
                 label.text = String(previousNumber / numberOnScreen)
             } else if operation == 13 {
@@ -141,6 +139,7 @@ class ViewController: UIViewController {
             numberOnScreen = 0;
             operation = 0;
             clear_prev_output = true
+            decimal_restricted = false
             
         // Inverse
         } else if sender.tag == 17 {
@@ -155,11 +154,12 @@ class ViewController: UIViewController {
     func check_decimal_restriction() {
         if decimal_restricted == true {
             print("cannot use decimal twice")
-        } else {
+        } else if decimal_restricted == false && clear_prev_output == true {
+            label.text = "0."
+        } else if decimal_restricted == false && clear_prev_output == false {
             label.text = label.text! + "."
-            numberOnScreen = Double(label.text!)!
-            decimal_restricted = true
         }
+        decimal_restricted = true
     }
 }
 
