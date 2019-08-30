@@ -143,6 +143,12 @@ class ViewController: UIViewController {
             
         // Inverse
         } else if sender.tag == 17 {
+            if label.text == "0.0" {
+                label.text = "-"
+                clear_prev_output = false
+            } else {
+                label.text = "-" + label.text!
+            }
             
         // Percentage
         } else if sender.tag == 18 {
