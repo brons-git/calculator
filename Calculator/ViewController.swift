@@ -42,6 +42,7 @@ class ViewController: UIViewController {
     var operation = 0;
     var clear_prev_output = true
     var decimal_restricted = false
+    var inversing = false
     
     // View Did Load
     override func viewDidLoad() {
@@ -61,7 +62,12 @@ class ViewController: UIViewController {
             if sender.tag == 19 {
                 check_decimal_restriction()
             } else {
-                label.text = String(sender.tag-1)
+                if inversing == true {
+                    label.text = "-" + String(sender.tag-1)
+                    inversing = false
+                } else {
+                    label.text = String(sender.tag-1)
+                }
             }
             clear_prev_output = false
             performingMath = false
@@ -146,6 +152,10 @@ class ViewController: UIViewController {
             if label.text == "0.0" {
                 label.text = "-"
                 clear_prev_output = false
+            } else if performingMath == true {
+                label.text = "-"
+                clear_prev_output = false
+                inversing = true
             } else {
                 label.text = "-" + label.text!
             }
